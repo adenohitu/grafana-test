@@ -1,1 +1,9 @@
 .env*
+proxy/vhost/*
+proxy/conf/*
+proxy/certs/*
+proxy/acme/*
+
+influxdb/data/*
+
+grafana/grafana_data/*

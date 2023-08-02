@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  grafana:
+    image: grafana/grafana:10.0.3
+    container_name: grafana
+    restart: unless-stopped
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+    environment:
+      VIRTUAL_HOST: ${VHOST}
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: ${LHOST}
+      LETSENCRYPT_EMAIL: ${LEMAIL}
+    user: "$PID:$GID"
+volumes:
+  grafana_data: {}
+networks:
+  default:
+    external: true
+    name: nginx-proxy

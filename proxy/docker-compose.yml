@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 services:
   nginx-proxy:
@@ -18,7 +18,7 @@ services:
     image: nginxproxy/acme-companion
     container_name: nginx-proxy-acme
     environment:
-      - DEFAULT_EMAIL=DEFAULT_EMAIL${DEMAIL}
+      - DEFAULT_EMAIL=${DEMAIL}
     volumes_from:
       - nginx-proxy
     volumes:
